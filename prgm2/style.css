@@ -1,0 +1,27 @@
+.external-css {
+    color: blue;
+    font-weight: bold;
+    background-color: #78c4ce;
+    padding: 10px;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    width: fit-content;
+    margin-bottom: 20px;
+    
+  }
+  
+  .external-button {
+    background-color: #00796b;
+    color: rgb(224, 218, 218);
+    border: 5px solid #02382f;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .external-button:hover {
+    background-color: #02382f;
+  }
+  
