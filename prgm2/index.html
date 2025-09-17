@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prgm2</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      body {
+        align-items: center;
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #9ccf24;
+      }
+
+      h1 {
+        color: #0c77be;
+        border-bottom: 3px solid #666;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        font-size: 50px;
+        text-align: center;
+      }
+
+      .internal-css {
+        color: green;
+        font-style: italic;
+        background-color: #dcedc8;
+        padding: 10px;
+        border-left: 5px solid green;
+        width: fit-content;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .internal-box {
+        width: 200px;
+        height: 100px;
+        background-color: #a5d6a7;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2e7d32;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lab Program 2</h1>
+
+    <p class="external-css">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit
+      corrupti sint quae aperiam adipisci dolore dolorum rem enim ducimus ipsum
+      officiis, eum quia nesciunt itaque dolorem ullam dicta qui odio.<strong
+        ><br /><br />External CSS</strong
+      ><br />Lorem ipsum dolo sit, amet consectetur adipisicing elit. Excepturi
+      laudantium aspernatur, quos sapiente dolorum numquam itaque quasi
+      consequuntur, adipisci modi harum! Nobis quisquam ipsum eos corrupti
+      delectus dolore ex laboriosam.
+    </p>
+
+    <button class="external-button">External CSS button</button>
+
+    <p class="internal-css">
+      This paragraph uses <strong>Internal CSS</strong>. Lorem, ipsum dolor sit
+      amet consectetur adipisicing elit. Iste accusantium ipsam numquam.
+      Reprehenderit eligendi consequatur pariatur officiis sunt error quia
+      possimus ducimus eaque maxime ullam voluptatibus, neque explicabo unde
+      atque!
+    </p>
+
+    <div class="internal-box">Internal CSS Box</div>
+    <p
+      style="
+        color: rgb(104, 11, 133);
+        text-decoration: underline;
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #eed706;
+        padding: 8px;
+        border-radius: 4px;
+      "
+    >
+      This paragraph uses <strong>Inline CSS.<br /><br /></strong> Lorem ipsum
+      dolor, sit amet consectetur adipisicing elit. Aperiam quos eaque explicabo
+      ab eveniet doloremque voluptatum? Architecto, delectus perferendis iure
+      nulla sit modi repellat tenetur, labore eligendi odit non temporibus.
+    </p>
+
+    <button
+      id="hoverButton"
+      style="
+        background-color: #d32f2f;
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 10px 20px;
+        font-size: 35px;
+        font-weight: 800;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      "
+    >
+      Inline CSS Button
+    </button>
+  </body>
+</html>
