@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Validation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #155368;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form.formstyle {
+        background: rgb(18, 104, 39);
+        padding: 30px 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+
+      form.formstyle label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #f5f0f0;
+      }
+
+      form.formstyle input[type="text"],
+      form.formstyle input[type="email"],
+      form.formstyle input[type="tel"],
+      form.formstyle input[type="password"] {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 20px;
+        border: 1.5px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      form.formstyle input[type="text"]:focus,
+      form.formstyle input[type="email"]:focus,
+      form.formstyle input[type="tel"]:focus,
+      form.formstyle input[type="password"]:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      form.formstyle input[type="submit"] {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 18px;
+        padding: 12px;
+        border-radius: 15px;
+        width: 100%;
+        transition: background-color 0.5s;
+      }
+
+      form.formstyle input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <form class="formstyle" name="Regform" onsubmit="return validation()">
+
+      <h1 style="font-family: Arial, Helvetica, sans-serif; padding-left: 60px; font-weight: 90px;color: rgb(13, 240, 240);">Registration Form</h1>
+      <label>Name :</label>
+      <input type="text" name="name" />
+
+      <label>Email:</label>
+      <input type="email" name="email"  />
+
+      <label>Phone Number :</label>
+      <input type="tel" name="number" />
+
+      <label>Password :</label>
+      <input type="password" name="password" />
+
+      <label>Confirm Password :</label>
+      <input type="password" name="confirmpassword"  />
+
+      <label>Guardian Name :</label>
+      <input type="text" name="guardian_name" />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      function validation() {
+        let Name = document.forms["Regform"]["name"].value.trim();
+        let Email = document.forms["Regform"]["email"].value.trim();
+        let PhoneNumber = document.forms["Regform"]["number"].value.trim();
+        let password = document.forms["Regform"]["password"].value;
+        let confirmpassword = document.forms["Regform"]["confirmpassword"].value;
+        let guardian_name = document.forms["Regform"]["guardian_name"].value.trim();
+
+        if (
+          Name === "" ||
+          Email === "" ||
+          PhoneNumber === "" ||
+          password === "" ||
+          confirmpassword === "" ||
+          guardian_name === ""
+        ) {
+          alert("Please fill in all fields.");
+          return false;
+        }
+
+        let namePattern = /^[a-zA-Z\s]+$/;
+        if (!namePattern.test(Name)) {
+          alert("Name should contain only letters and spaces.");
+          return false;
+        }
+
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(Email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+        let phonePattern = /^[0-9]{10}$/;
+        if (!phonePattern.test(PhoneNumber)) {
+          alert("Phone number should be 10 digits long.");
+          return false;
+        }
+
+        if (password !== confirmpassword) {
+          alert("Passwords do not match.");
+          return false;
+        }
+
+        alert("Registration successful!");
+        return true;
+      }
+    </script>
+  </body>
+</html>
