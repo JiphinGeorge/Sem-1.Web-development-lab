@@ -1,43 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Concurrent Tasks</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bright Vertical Strips</title>
     <style>
+      html,
       body {
-        font-family: 'Times New Roman', Times, serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        font-family: "Times New Roman", Times, serif;
         background: #1460ac;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
         padding: 40px 20px;
         color: #952121;
         font-weight: 900;
         position: relative;
         overflow: hidden;
         min-height: 100vh;
+        z-index: 1;
       }
 
-      /* Long background strips */
-      .bg-strip {
+      /* Container for vertical strips */
+      .background-container {
         position: absolute;
-        width: 200px;
-        height: 100vh;
-        opacity: 0.3;
-        transition: background-color 0.4s ease;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
         z-index: 0;
       }
 
-      .bg-strip:hover {
-        opacity: 0.6;
-        background-color: #ff9800;
+      /* Each vertical strip */
+      .bg-strip {
+        flex: 1;
+        height: 100%;
+        opacity: 0.4;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
       }
 
-      .strip1 { left: 0; top: 0; background-color: #4caf50; transform: rotate(-5deg); }
-      .strip2 { left: 150px; top: 0; background-color: #2196f3; transform: rotate(5deg); }
-      .strip3 { left: 300px; top: 0; background-color: #e91e63; transform: rotate(-10deg); }
-      .strip4 { right: 250px; top: 0; background-color: #9c27b0; transform: rotate(8deg); }
-      .strip5 { right: 80px; top: 0; background-color: #ffc107; transform: rotate(-6deg); }
+      /* Bright default colors */
+      .strip1 {
+        background-color: #00ff00;
+      } /* Bright green */
+      .strip2 {
+        background-color: #00bfff;
+      } /* Bright blue */
+      .strip3 {
+        background-color: #ff1493;
+      } /* Bright pink */
+      .strip4 {
+        background-color: #da70d6;
+      } /* Bright purple */
+      .strip5 {
+        background-color: #ffff00;
+      } /* Bright yellow */
+      .strip6 {
+        background-color: #00ff00;
+      }
+      .strip7 {
+        background-color: #00bfff;
+      }
+      .strip8 {
+        background-color: #ff1493;
+      }
+      .strip9 {
+        background-color: #da70d6;
+      }
+      .strip10 {
+        background-color: #ffff00;
+      }
 
+      /* Darker hover versions */
+      .strip1:hover {
+        background-color: #009900;
+      }
+      .strip2:hover {
+        background-color: #006699;
+      }
+      .strip3:hover {
+        background-color: #b80065;
+      }
+      .strip4:hover {
+        background-color: #8a4e8a;
+      }
+      .strip5:hover {
+        background-color: #d4af00;
+      }
+      .strip6:hover {
+        background-color: #009900;
+      }
+      .strip7:hover {
+        background-color: #006699;
+      }
+      .strip8:hover {
+        background-color: #b80065;
+      }
+      .strip9:hover {
+        background-color: #8a4e8a;
+      }
+      .strip10:hover {
+        background-color: #d4af00;
+      }
+
+      /* Button styles */
       button {
         background-color: #05a10a;
         color: white;
@@ -47,7 +121,7 @@
         border-radius: 6px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         z-index: 1;
       }
 
@@ -55,13 +129,14 @@
         background-color: #156018;
       }
 
+      /* Output box */
       #output {
         margin-top: 30px;
         width: 100%;
         max-width: 480px;
         background: rgb(255, 255, 255);
         border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         padding: 20px;
         font-size: 16px;
         line-height: 1.5;
@@ -72,14 +147,21 @@
     </style>
   </head>
   <body>
-    <!-- Long Background Strips -->
-    <div class="bg-strip strip1"></div>
-    <div class="bg-strip strip2"></div>
-    <div class="bg-strip strip3"></div>
-    <div class="bg-strip strip4"></div>
-    <div class="bg-strip strip5"></div>
+    <!-- Bright vertical background strips -->
+    <div class="background-container">
+      <div class="bg-strip strip1"></div>
+      <div class="bg-strip strip2"></div>
+      <div class="bg-strip strip3"></div>
+      <div class="bg-strip strip4"></div>
+      <div class="bg-strip strip5"></div>
+      <div class="bg-strip strip6"></div>
+      <div class="bg-strip strip7"></div>
+      <div class="bg-strip strip8"></div>
+      <div class="bg-strip strip9"></div>
+      <div class="bg-strip strip10"></div>
+    </div>
 
-    <!-- Foreground Content -->
+    <!-- Content -->
     <button onclick="startTasks()">Start Cooking & Cleaning</button>
     <div id="output"></div>
 
@@ -92,7 +174,8 @@
           output.innerHTML += "Cooking finished after 3 seconds.<br>";
         }, 3000);
 
-        output.innerHTML += "Kitchen cleaning started and finished quickly.<br>";
+        output.innerHTML +=
+          "Kitchen cleaning started and finished quickly.<br>";
       }
     </script>
   </body>
