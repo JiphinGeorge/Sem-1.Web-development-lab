@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Concurrent Tasks</title>
+    <style>
+      body {
+        font-family: 'Times New Roman', Times, serif;
+        background: #1460ac;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: #ffffff;
+        font-weight: 900;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      button:hover {
+        background-color: #156018;
+      }
+
+      #output {
+        margin-top: 30px;
+        width: 100%;
+        max-width: 480px;
+        background: rgb(139, 178, 137);
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.5;
+        min-height: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="startTasks()">Start Cooking & Cleaning</button>
+    <div id="output"></div>
+
+    <script>
+      function startTasks() {
+        const output = document.getElementById("output");
+
+        output.innerHTML += "Cooking started...<br>";
+        setTimeout(() => {
+          output.innerHTML += "Cooking finished after 3 seconds.<br>";
+        }, 3000);
+
+        output.innerHTML += "Kitchen cleaning started and finished quickly.<br>";
+      }
+    </script>
+  </body>
+</html>
