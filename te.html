@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body bgcolor="lightyellow">
+
+<h2>Registration Form</h2>
+
+<form name="regForm" onsubmit="return validateForm()">
+    Full Name: <input type="text" name="fullname"><br><br>
+    Email: <input type="text" name="email"><br><br>
+    Phone: <input type="text" name="phone"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    Confirm Password: <input type="password" name="confirmpassword"><br><br>
+    <input type="submit" value="Register">
+</form>
+
+<p id="link" style="display:none;">
+    <a href="result.html">Go to Next Page</a>
+</p>
+
+<script>
+function validateForm() {
+    let f = document.forms["regForm"];
+    let name = f["fullname"].value;
+    let email = f["email"].value;
+    let phone = f["phone"].value;
+    let pass = f["password"].value;
+    let cpass = f["confirmpassword"].value;
+
+    if (name=="" || email=="" || phone=="" || pass=="" || cpass=="") {
+        alert("All fields are required!");
+        return false;
+    }
+    if (pass != cpass) {
+        alert("Passwords do not match!");
+        return false;
+    }
+
+    alert("Registration Successful!");
+    document.getElementById("link").style.display = "block";
+    return false;
+}
+</script>
+
+</body>
+</html>

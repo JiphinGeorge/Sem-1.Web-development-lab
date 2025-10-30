@@ -1,0 +1,32 @@
+//Write a simple JavaScript program for Cooking (takes 3 seconds to "finish")kitchen Cleaning  (without waiting for cooking to  finish).
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cooking and Cleaning</title>
+  </head>
+  <body>
+    <h2>Cooking and Cleaning</h2>
+    <button onclick="startTasks()">Start Tasks</button>
+
+    <p id="cooking">Cooking: Not started</p>
+    <p id="cleaning">Cleaning: Not started</p>
+
+    <script>
+      function startTasks() {
+        document.getElementById("cooking").innerText = "Cooking: Started...";
+        document.getElementById("cleaning").innerText = "Cleaning: Started...";
+
+        // Cooking takes 3 seconds
+        setTimeout(() => {
+          document.getElementById("cooking").innerText = "Cooking: Finished!";
+        }, 3000);
+
+        // Cleaning starts immediately and finishes in 2 seconds
+        setTimeout(() => {
+          document.getElementById("cleaning").innerText = "Cleaning: Finished!";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
